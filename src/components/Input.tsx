@@ -117,7 +117,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         </div>
 
         {error && (
-          <p className="mt-2 flex items-center gap-x-1 text-sm text-error-500">
+          <p className="mt-2 flex items-center gap-x-1 text-sm text-rose-500">
             {error}
           </p>
         )}

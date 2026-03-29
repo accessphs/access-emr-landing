@@ -1,5 +1,6 @@
 import { LockedTutorialModal } from "@/pages/modals/LockedTutorialModal";
 import { RequestDemoDrawer } from "@/pages/modals/RequestDemoDrawer";
+import { Success } from "@/pages/modals/Success";
 import { VideoGuideModal } from "@/pages/modals/VideoGuide";
 import { Fragment, JSX } from "react";
 import { create } from "zustand";
@@ -8,6 +9,7 @@ export enum ModalTypes {
   VIDEO_GUIDE = "VIDEO_GUIDE",
   LOCKED_TUTORIAL = "LOCKED_TUTORIAL",
   REQUEST_DEMO_DRAWER = "REQUEST_DEMO_DRAWER",
+  SUCCESS = "SUCCESS",
 }
 
 type AppModal = {
@@ -44,6 +46,7 @@ const Modals = [
   { component: VideoGuideModal, value: ModalTypes.VIDEO_GUIDE },
   { component: LockedTutorialModal, value: ModalTypes.LOCKED_TUTORIAL },
   { component: RequestDemoDrawer, value: ModalTypes.REQUEST_DEMO_DRAWER },
+  { component: Success, value: ModalTypes.SUCCESS },
 ] as {
   value: ModalTypes;
   component: ({
