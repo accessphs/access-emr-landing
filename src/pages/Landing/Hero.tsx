@@ -1,3 +1,4 @@
+import { ModalTypes, useModalStore } from "@/modal/GlobalModal";
 import { Button } from "@ui";
 import classNames from "classnames";
 import { Demo } from "./Icons";
@@ -14,18 +15,24 @@ export const StyleText = ({
   </p>
 );
 
-export const HeroButton = ({ className }: { className?: string }) => (
-  <div className={classNames("flex gap-8", className)}>
-    <Button kinds={"secondary"}>
-      <span>Request Demo</span>
-      <Demo />
-    </Button>
-    {/* <Button>
+export const HeroButton = ({ className }: { className?: string }) => {
+  const openModal = useModalStore((state) => state.openModal);
+  return (
+    <div className={classNames("flex gap-8", className)}>
+      <Button
+        kinds={"secondary"}
+        onClick={() => openModal(ModalTypes.REQUEST_DEMO_DRAWER)}
+      >
+        <span>Request Demo</span>
+        <Demo />
+      </Button>
+      {/* <Button>
       <span>Sign in</span>
       <Next />
     </Button> */}
-  </div>
-);
+    </div>
+  );
+};
 
 const Hero = () => {
   return (
