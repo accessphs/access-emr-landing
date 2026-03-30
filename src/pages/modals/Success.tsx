@@ -18,7 +18,7 @@ export const Success = ({ isOpen, onClose }: Props) => {
           <h2 className="text-2xl font-medium text-[#141414]">
             Request Submitted
           </h2>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 max-w-[341px]">
             Thank you for your request. Our customer support will be in touch
             with you
           </p>

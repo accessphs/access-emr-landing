@@ -12,14 +12,14 @@ type Props = {
 };
 
 const formSchema = yup.object().shape({
-  fullName: yup.string().required("Full name is required"),
+  full_name: yup.string().required("Full name is required"),
   email: yup
     .string()
     .email("Invalid email address")
     .required("Email is required"),
   organization: yup.string().required("Organization is required"),
-  countryState: yup.string().required("Country/State is required"),
-  preferredDate: yup.string().required("Preferred date is required"),
+  location: yup.string().required("Country/State is required"),
+  preferred_date: yup.string().required("Preferred date is required"),
 });
 
 type FormValues = yup.InferType<typeof formSchema>;
@@ -87,7 +87,7 @@ export function RequestDemoDrawer({ isOpen, onClose }: Props) {
             onSubmit={handleSubmit(onSubmit)}
           >
             <FormInput
-              name="fullName"
+              name="full_name"
               intent="fill"
               label="Full name"
               placeholder="Enter your full name"
@@ -106,13 +106,13 @@ export function RequestDemoDrawer({ isOpen, onClose }: Props) {
               placeholder="What is your organization name"
             />
             <FormInput
-              name="countryState"
+              name="location"
               intent="fill"
               label="Country/State"
               placeholder="E.g Nigeria/ Lagos"
             />
             <FormInput
-              name="preferredDate"
+              name="preferred_date"
               intent="fill"
               label="Preferred date"
               type="date"
