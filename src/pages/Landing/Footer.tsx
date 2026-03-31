@@ -1,4 +1,3 @@
-import { Logo } from "@icons";
 import { Link } from "react-router-dom";
 import { StyleText } from "./Hero";
 
@@ -8,8 +7,8 @@ const Footer = () => {
       <div className="flex mx-[100px] flex-col gap-[72px]">
         <div className="flex justify-between md:gap-32 md:flex-row flex-col">
           <div className="flex flex-col gap-6">
-            <Logo />
-            <div className="flex flex-col gap-4 items-start">
+            <img src="/logo.png" alt="Logo" className="h-24 -ml-7" />
+            <div className="flex flex-col gap-4 items-star -mt-12">
               {/* <Button className="bg-[#F2F2F2]" kinds={"normal"}>
                 Sign in
               </Button> */}

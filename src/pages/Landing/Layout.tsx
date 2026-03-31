@@ -6,7 +6,8 @@ import { System } from "./System";
 
 export const Layout = () => {
   return (
-    <main className="w-full max-w-screen-2xl mx-auto overflow-hidden">
+    <main className="mx-auto w-full max-w-screen-2xl overflow-x-hidden relative">
+      <div className="h-24"></div>
       <Navbar />
       <Outlet />
       <System />

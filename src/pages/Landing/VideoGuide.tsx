@@ -25,6 +25,12 @@ const SAMPLE_VIDEO_URL = "https://youtu.be/vMz5FhPcMJE";
 
 const GUIDES: GuideItem[] = [
   {
+    id: "A",
+    title: "Administrator's Introduction",
+    role: "administrator",
+    videoUrl: "https://youtu.be/cJHMCZhNzNo",
+  },
+  {
     id: "1",
     title: "How to add a patient",
     role: "doctor",

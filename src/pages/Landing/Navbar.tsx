@@ -1,12 +1,15 @@
-import { Logo } from "@icons";
 import classNames from "classnames";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const SECTIONS = [
   { id: "home" as const, label: "Home", path: "/" },
   { id: "features" as const, label: "Features", path: "/#features" },
-  { id: "testimonials" as const, label: "Testimonials", path: "/#testimonials" },
+  {
+    id: "testimonials" as const,
+    label: "Testimonials",
+    path: "/#testimonials",
+  },
 ];
 type SectionId = (typeof SECTIONS)[number]["id"];
 
@@ -31,25 +34,17 @@ const Navbar = () => {
   const { pathname } = useLocation();
   const onLanding = pathname === "/";
   const [section, setSection] = useState<SectionId>("home");
-  const [hidden, setHidden] = useState(false);
-  const lastY = useRef(0);
 
   useEffect(() => {
-    lastY.current = window.scrollY;
     const sync = () => {
       if (pathname !== "/") return;
       const next = activeSectionAt(window.scrollY);
       setSection((p) => (p === next ? p : next));
     };
     const onScroll = () => {
-      const y = window.scrollY;
       if (pathname === "/") sync();
-      if (y < 48) setHidden(false);
-      else if (y > lastY.current) setHidden(true);
-      else if (y < lastY.current) setHidden(false);
-      lastY.current = y;
     };
-    onScroll();
+    sync();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", sync);
     return () => {
@@ -59,37 +54,28 @@ const Navbar = () => {
   }, [pathname]);
 
   return (
-    <>
-      <div aria-hidden className="h-[80px] shrink-0" />
-      <nav
-        className={classNames(
-          "fixed inset-x-0 top-0 z-50 flex items-center justify-between border-b border-gray-100 bg-white/95 px-16 py-7 backdrop-blur-sm md:px-[100px]",
-          "transition-transform duration-300 ease-out motion-reduce:transition-none",
-          hidden ? "-translate-y-full" : "translate-y-0"
+    <nav className="fixed top-0 z-50 flex w-full items-center justify-between border-b border-gray-100 bg-white/95 px-16 py-7 backdrop-blur-sm md:px-[100px] h-24">
+      <img src="/logo.png" alt="Logo" className="h-24 -ml-7" />
+      <ul className="flex gap-8">
+        {SECTIONS.map(({ id, label, path }) =>
+          onLanding ? (
+            <a key={id} className={navLink(section === id)} href={`#${id}`}>
+              {label}
+            </a>
+          ) : (
+            <Link key={id} className={navLink(false)} to={path}>
+              {label}
+            </Link>
+          )
         )}
-      >
-        <Logo />
-        <ul className="flex gap-8">
-          {SECTIONS.map(({ id, label, path }) =>
-            onLanding ? (
-              <a key={id} className={navLink(section === id)} href={`#${id}`}>
-                {label}
-              </a>
-            ) : (
-              <Link key={id} className={navLink(false)} to={path}>
-                {label}
-              </Link>
-            )
-          )}
-          <Link
-            className={navLink(pathname === "/video-guide")}
-            to="/video-guide"
-          >
-            Video Guide
-          </Link>
-        </ul>
-      </nav>
-    </>
+        <Link
+          className={navLink(pathname === "/video-guide")}
+          to="/video-guide"
+        >
+          Video Guide
+        </Link>
+      </ul>
+    </nav>
   );
 };
 
