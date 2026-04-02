@@ -6,7 +6,8 @@ export type VideoGuideRole =
   | "doctor"
   | "nurse"
   | "pharmacist"
-  | "lab_technician";
+  | "lab_technician"
+  | "receptionist";
 
 const ROLE_META: Record<
   VideoGuideRole,
@@ -31,6 +32,10 @@ const ROLE_META: Record<
   lab_technician: {
     label: "Lab technician's flow",
     badgeClass: "bg-[#EDE7F6] text-[#4A148C]",
+  },
+  receptionist: {
+    label: "Receptionist's flow",
+    badgeClass: "bg-[#F5F0D8] text-[#4a4a2a]",
   },
 };
 

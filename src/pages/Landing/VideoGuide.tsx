@@ -14,6 +14,7 @@ const FILTERS: { id: FilterId; label: string }[] = [
   { id: "administrator", label: "Administrators" },
   { id: "doctor", label: "Doctors" },
   { id: "nurse", label: "Nurses" },
+  { id: "receptionist", label: "Receptionist" },
   { id: "pharmacist", label: "Pharmacist" },
   { id: "lab_technician", label: "Lab Technician" },
 ];
@@ -21,7 +22,7 @@ const FILTERS: { id: FilterId; label: string }[] = [
 type GuideItem = VideoGuideCardProps & { id: string };
 
 /** Direct .mp4/.webm URLs use the custom player; YouTube watch/share links use an embed. */
-const SAMPLE_VIDEO_URL = "https://youtu.be/vMz5FhPcMJE";
+// const SAMPLE_VIDEO_URL = "https://youtu.be/vMz5FhPcMJE";
 
 const GUIDES: GuideItem[] = [
   {
@@ -32,95 +33,95 @@ const GUIDES: GuideItem[] = [
   },
   {
     id: "1",
-    title: "How to add a patient",
+    title: "Doctor's Introduction",
     role: "doctor",
-    videoUrl: SAMPLE_VIDEO_URL,
+    videoUrl: "https://youtu.be/oSzOYrIlx68",
   },
   {
     id: "2",
-    title: "Ordering for a drug",
-    role: "doctor",
-    videoUrl: SAMPLE_VIDEO_URL,
+    title: "Nurse's Introduction",
+    role: "nurse",
+    videoUrl: "https://youtu.be/QBi3x0xpKE8",
   },
   {
     id: "3",
-    title: "Reviewing lab results in the chart",
-    role: "doctor",
+    title: "Receptionist's Introduction",
+    role: "receptionist",
+    videoUrl: "https://youtu.be/vMz5FhPcMJE",
   },
-  {
-    id: "4",
-    title: "Patient vitals & charting",
-    role: "nurse",
-    videoUrl: SAMPLE_VIDEO_URL,
-  },
-  {
-    id: "5",
-    title: "Medication administration (MAR)",
-    role: "nurse",
-  },
-  {
-    id: "6",
-    title: "Handoff & shift reports",
-    role: "nurse",
-    videoUrl: SAMPLE_VIDEO_URL,
-  },
-  {
-    id: "7",
-    title: "User roles & permissions",
-    role: "administrator",
-    videoUrl: SAMPLE_VIDEO_URL,
-  },
-  {
-    id: "8",
-    title: "Department & location setup",
-    role: "administrator",
-    videoUrl: SAMPLE_VIDEO_URL,
-  },
-  {
-    id: "9",
-    title: "Audit logs & compliance",
-    role: "administrator",
-  },
-  {
-    id: "10",
-    title: "Dispensing & inventory checks",
-    role: "pharmacist",
-    videoUrl: SAMPLE_VIDEO_URL,
-  },
-  {
-    id: "11",
-    title: "Drug interaction alerts",
-    role: "pharmacist",
-    videoUrl: SAMPLE_VIDEO_URL,
-  },
-  {
-    id: "12",
-    title: "Compounding workflows",
-    role: "pharmacist",
-  },
-  {
-    id: "13",
-    title: "Receiving orders & specimens",
-    role: "lab_technician",
-    videoUrl: SAMPLE_VIDEO_URL,
-  },
-  {
-    id: "14",
-    title: "Entering & verifying results",
-    role: "lab_technician",
-    videoUrl: SAMPLE_VIDEO_URL,
-  },
-  {
-    id: "15",
-    title: "Critical value notifications",
-    role: "lab_technician",
-  },
-  {
-    id: "16",
-    title: "Discharge summary & follow-up",
-    role: "doctor",
-    videoUrl: SAMPLE_VIDEO_URL,
-  },
+  // {
+  //   id: "4",
+  //   title: "Patient vitals & charting",
+  //   role: "nurse",
+  // },
+  // {
+  //   id: "5",
+  //   title: "Medication administration (MAR)",
+  //   role: "nurse",
+  // },
+  // {
+  //   id: "6",
+  //   title: "Handoff & shift reports",
+  //   role: "nurse",
+  //   videoUrl: SAMPLE_VIDEO_URL,
+  // },
+  // {
+  //   id: "7",
+  //   title: "User roles & permissions",
+  //   role: "administrator",
+  //   videoUrl: SAMPLE_VIDEO_URL,
+  // },
+  // {
+  //   id: "8",
+  //   title: "Department & location setup",
+  //   role: "administrator",
+  //   videoUrl: SAMPLE_VIDEO_URL,
+  // },
+  // {
+  //   id: "9",
+  //   title: "Audit logs & compliance",
+  //   role: "administrator",
+  // },
+  // {
+  //   id: "10",
+  //   title: "Dispensing & inventory checks",
+  //   role: "pharmacist",
+  //   videoUrl: SAMPLE_VIDEO_URL,
+  // },
+  // {
+  //   id: "11",
+  //   title: "Drug interaction alerts",
+  //   role: "pharmacist",
+  //   videoUrl: SAMPLE_VIDEO_URL,
+  // },
+  // {
+  //   id: "12",
+  //   title: "Compounding workflows",
+  //   role: "pharmacist",
+  // },
+  // {
+  //   id: "13",
+  //   title: "Receiving orders & specimens",
+  //   role: "lab_technician",
+  //   videoUrl: SAMPLE_VIDEO_URL,
+  // },
+  // {
+  //   id: "14",
+  //   title: "Entering & verifying results",
+  //   role: "lab_technician",
+  //   videoUrl: SAMPLE_VIDEO_URL,
+  // },
+  // {
+  //   id: "15",
+  //   title: "Critical value notifications",
+  //   role: "lab_technician",
+  // },
+  // {
+  //   id: "16",
+  //   title: "Discharge summary & follow-up",
+  //   role: "doctor",
+  //   videoUrl: SAMPLE_VIDEO_URL,
+  // },
 ];
 
 export const VideoGuide = () => {
