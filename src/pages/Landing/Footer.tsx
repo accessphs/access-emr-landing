@@ -4,18 +4,23 @@ import { StyleText } from "./Hero";
 const Footer = () => {
   return (
     <div className="py-10 sm:py-12 md:py-[50px]">
-      <div className="mx-auto flex max-w-screen-2xl flex-col gap-12 px-4 sm:gap-16 sm:px-6 md:mx-[100px] md:gap-[72px] md:px-0">
+      <div className="mx-auto flex max-w-screen-2xl flex-col gap-12 px-4 sm:gap-16 sm:px-6 md:mx-[100px] md:gap-[72px] md:px-0 relative">
         <div className="flex flex-col justify-between gap-10 md:flex-row md:gap-32">
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 items-start">
             <img
               src="/logo.png"
               alt="Logo"
-              className="h-14 w-auto object-contain md:h-24 md:-ml-7"
+              className="w-auto object-contain items-start justify-start h-24 -ml-7"
             />
-            <div className="flex flex-col gap-4 items-star -mt-12">
+            <div className="flex-col gap-4 items-start hidden md:flex -mt-12">
               {/* <Button className="bg-[#F2F2F2]" kinds={"normal"}>
                 Sign in
               </Button> */}
+              <p className="text-sm text-[#1A1A1A]">
+                © accessemr Ltd {new Date().getFullYear()}
+              </p>
+            </div>
+            <div className="absolute bottom-0 left-4 flex-col gap-4 items-start md:hidden -mt-12">
               <p className="text-sm text-[#1A1A1A]">
                 © accessemr Ltd {new Date().getFullYear()}
               </p>
