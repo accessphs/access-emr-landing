@@ -136,23 +136,25 @@ const ModuleCard = ({
   label: string;
 }) => (
   <div
-    className="flex w-fit items-center gap-3 px-5 py-4 rounded-lg justify-start"
+    className="flex w-fit max-w-[min(100vw-2rem,300px)] items-center justify-start gap-2 rounded-lg px-3 py-3 sm:gap-3 sm:px-5 sm:py-4"
     style={{ backgroundColor: color }}
   >
     <Icon />
-    <p className="capitalize text-[#1A1A1A] text-lg text-nowrap">{label}</p>
+    <p className="text-sm capitalize leading-tight text-[#1A1A1A] sm:text-base md:text-lg">
+      {label}
+    </p>
   </div>
 );
 
 const Modules = () => {
   return (
-    <div className="w-full bg-[#0A100A] min-h-[580px] flex flex-col">
-      <div className="flex flex-col gap-16 my-auto">
-        <div className="mx-auto flex flex-col gap-7 text-center">
-          <StyleText className="text-[40px] text-white">
+    <div className="flex min-h-[420px] w-full flex-col bg-[#0A100A] py-12 sm:min-h-[500px] sm:py-16 md:min-h-[580px]">
+      <div className="mx-auto my-auto flex w-full max-w-screen-2xl flex-col gap-10 px-2 sm:gap-12 md:gap-16">
+        <div className="mx-auto flex max-w-3xl flex-col gap-4 px-4 text-center sm:gap-7">
+          <StyleText className="text-2xl text-white sm:text-3xl md:text-[40px]">
             SOFTWARE MODULES
           </StyleText>
-          <p className="text-[#B3B3B3] text-2xl font-light">
+          <p className="text-base font-light text-[#B3B3B3] sm:text-lg md:text-2xl">
             We built customizable modules to help you manage your hospital
             effectively
           </p>

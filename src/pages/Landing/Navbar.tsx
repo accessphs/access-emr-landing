@@ -15,7 +15,7 @@ type SectionId = (typeof SECTIONS)[number]["id"];
 
 const navLink = (active: boolean) =>
   classNames(
-    "cursor-pointer transition-colors duration-200",
+    "block py-2 text-sm transition-colors duration-200 md:inline md:py-0 md:text-base",
     active ? "text-primary" : "text-[#1a1a1a]/70 hover:text-[#1a1a1a]"
   );
 
@@ -30,10 +30,60 @@ function activeSectionAt(scrollY: number): SectionId {
   return current;
 }
 
+function NavLinks({
+  onLanding,
+  section,
+  pathname,
+  onNavigate,
+}: {
+  onLanding: boolean;
+  section: SectionId;
+  pathname: string;
+  onNavigate?: () => void;
+}) {
+  return (
+    <>
+      {SECTIONS.map(({ id, label, path }) =>
+        onLanding ? (
+          <a
+            key={id}
+            className={navLink(section === id)}
+            href={`#${id}`}
+            onClick={onNavigate}
+          >
+            {label}
+          </a>
+        ) : (
+          <Link
+            key={id}
+            className={navLink(false)}
+            to={path}
+            onClick={onNavigate}
+          >
+            {label}
+          </Link>
+        )
+      )}
+      <Link
+        className={navLink(pathname === "/video-guide")}
+        to="/video-guide"
+        onClick={onNavigate}
+      >
+        Video Guide
+      </Link>
+    </>
+  );
+}
+
 const Navbar = () => {
   const { pathname } = useLocation();
   const onLanding = pathname === "/";
   const [section, setSection] = useState<SectionId>("home");
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     const sync = () => {
@@ -54,27 +104,71 @@ const Navbar = () => {
   }, [pathname]);
 
   return (
-    <nav className="fixed top-0 z-50 flex w-full items-center justify-between border-b border-gray-100 bg-white/95 px-16 py-7 backdrop-blur-sm md:px-[100px] h-24">
-      <img src="/logo.png" alt="Logo" className="h-24 -ml-7" />
-      <ul className="flex gap-8">
-        {SECTIONS.map(({ id, label, path }) =>
-          onLanding ? (
-            <a key={id} className={navLink(section === id)} href={`#${id}`}>
-              {label}
-            </a>
-          ) : (
-            <Link key={id} className={navLink(false)} to={path}>
-              {label}
-            </Link>
-          )
-        )}
-        <Link
-          className={navLink(pathname === "/video-guide")}
-          to="/video-guide"
+    <nav className="fixed top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur-sm">
+      <div className="relative mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4 md:h-24 md:px-[100px] lg:px-[100px]">
+        <img
+          src="/logo.png"
+          alt="Logo"
+          className="h-10 w-auto object-contain md:h-[4.5rem] md:-ml-7"
+        />
+
+        <ul className="hidden items-center gap-6 md:flex md:gap-8 lg:gap-10">
+          <NavLinks
+            onLanding={onLanding}
+            pathname={pathname}
+            section={section}
+          />
+        </ul>
+
+        <button
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-gray-900 hover:bg-gray-100 md:hidden"
+          type="button"
+          onClick={() => setMenuOpen((o) => !o)}
         >
-          Video Guide
-        </Link>
-      </ul>
+          {menuOpen ? (
+            <svg
+              aria-hidden
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg
+              aria-hidden
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </button>
+      </div>
+
+      {menuOpen ? (
+        <div
+          className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-gray-100 bg-white px-4 py-4 shadow-lg md:hidden"
+          id="mobile-nav"
+        >
+          <div className="flex flex-col gap-1">
+            <NavLinks
+              onLanding={onLanding}
+              pathname={pathname}
+              section={section}
+              onNavigate={() => setMenuOpen(false)}
+            />
+          </div>
+        </div>
+      ) : null}
     </nav>
   );
 };

@@ -3,11 +3,15 @@ import { StyleText } from "./Hero";
 
 const Footer = () => {
   return (
-    <div className="py-[50px]">
-      <div className="flex mx-[100px] flex-col gap-[72px]">
-        <div className="flex justify-between md:gap-32 md:flex-row flex-col">
+    <div className="py-10 sm:py-12 md:py-[50px]">
+      <div className="mx-auto flex max-w-screen-2xl flex-col gap-12 px-4 sm:gap-16 sm:px-6 md:mx-[100px] md:gap-[72px] md:px-0">
+        <div className="flex flex-col justify-between gap-10 md:flex-row md:gap-32">
           <div className="flex flex-col gap-6">
-            <img src="/logo.png" alt="Logo" className="h-24 -ml-7" />
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="h-14 w-auto object-contain md:h-24 md:-ml-7"
+            />
             <div className="flex flex-col gap-4 items-star -mt-12">
               {/* <Button className="bg-[#F2F2F2]" kinds={"normal"}>
                 Sign in
@@ -105,8 +109,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="">
-          <StyleText className="font-bold text-[163px]/[180px] text-center text-[#EDEDED]">
+        <div className="overflow-hidden px-1">
+          <StyleText className="text-center text-5xl font-bold leading-none text-[#EDEDED] sm:text-7xl md:text-8xl lg:text-[clamp(4rem,12vw,10.2rem)] lg:leading-[1.05] xl:text-[163px] xl:leading-[180px]">
             AccessEMR
           </StyleText>
         </div>

@@ -133,12 +133,12 @@ export const VideoGuide = () => {
   }, [filter]);
 
   return (
-    <div className="w-full px-16 pb-24 md:px-[100px]">
-      <div className="mx-auto flex max-w-screen-2xl flex-col gap-2 items-center mt-24 mb-12 text-center">
-        <StyleText className="text-[72px] text-black uppercase">
+    <div className="w-full px-4 pb-16 sm:px-6 sm:pb-20 md:px-12 md:pb-24 lg:px-[100px]">
+      <div className="mx-auto mt-16 mb-8 flex max-w-screen-2xl flex-col items-center gap-2 text-center sm:mt-20 sm:mb-10 md:mt-24 md:mb-12">
+        <StyleText className="text-3xl uppercase text-black sm:text-4xl md:text-5xl lg:text-6xl xl:text-[72px]">
           Video Guides
         </StyleText>
-        <p className="text-2xl text-[#6B6161]">
+        <p className="max-w-2xl text-base text-[#6B6161] sm:text-lg md:text-2xl">
           Tips and tutorials to help you navigate the system
         </p>
       </div>
@@ -146,7 +146,7 @@ export const VideoGuide = () => {
       <div className="mx-auto max-w-screen-2xl border-b border-gray-200">
         <nav
           aria-label="Filter by role"
-          className="flex flex-wrap gap-x-10 gap-y-3 justify-center"
+          className="flex flex-wrap justify-center gap-x-4 gap-y-2 sm:gap-x-6 sm:gap-y-3 md:gap-x-10"
         >
           {FILTERS.map(({ id, label }) => (
             <VideoGuideFilterTab

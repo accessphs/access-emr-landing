@@ -7,7 +7,7 @@ import { System } from "./System";
 export const Layout = () => {
   return (
     <main className="mx-auto w-full max-w-screen-2xl overflow-x-hidden relative">
-      <div className="h-24"></div>
+      <div className="h-16 shrink-0 md:h-24" aria-hidden />
       <Navbar />
       <Outlet />
       <System />

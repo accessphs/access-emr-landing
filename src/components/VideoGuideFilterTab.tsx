@@ -12,7 +12,7 @@ export function VideoGuideFilterTab({
   return (
     <button
       aria-pressed={active}
-      className="relative pb-3 text-base text-[#6B6161] transition-colors hover:text-gray-900"
+      className="relative pb-2 text-sm text-[#6B6161] transition-colors hover:text-gray-900 sm:pb-3 sm:text-base"
       type="button"
       onClick={onSelect}
     >
