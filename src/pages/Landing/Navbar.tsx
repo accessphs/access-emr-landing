@@ -16,7 +16,7 @@ type SectionId = (typeof SECTIONS)[number]["id"];
 const navLink = (active: boolean) =>
   classNames(
     "block py-2 text-sm transition-colors duration-200 md:inline md:py-0 md:text-base",
-    active ? "text-primary" : "text-[#1a1a1a]/70 hover:text-[#1a1a1a]"
+    active ? "text-primary" : "text-white/70 hover:text-white"
   );
 
 function activeSectionAt(scrollY: number): SectionId {
@@ -104,12 +104,12 @@ const Navbar = () => {
   }, [pathname]);
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur-sm">
+    <nav className="fixed top-0 z-50 w-full border-b border-gray-100 bg-[#003D32]/95 backdrop-blur-sm">
       <div className="relative mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4 md:h-24 md:px-[100px] lg:px-[100px]">
         <img
           src="/logo.png"
           alt="Logo"
-          className="h-10 w-auto object-contain md:h-[4.5rem] md:-ml-7"
+          className="h-20 w-auto object-contain md:h-[6rem] md:-ml-7"
         />
 
         <ul className="hidden items-center gap-6 md:flex md:gap-8 lg:gap-10">
@@ -124,7 +124,7 @@ const Navbar = () => {
           aria-expanded={menuOpen}
           aria-controls="mobile-nav"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-gray-900 hover:bg-gray-100 md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-white hover:bg-white/10 md:hidden"
           type="button"
           onClick={() => setMenuOpen((o) => !o)}
         >
@@ -156,7 +156,7 @@ const Navbar = () => {
 
       {menuOpen ? (
         <div
-          className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-gray-100 bg-white px-4 py-4 shadow-lg md:hidden"
+          className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-gray-100 bg-[#003D32] px-4 py-4 shadow-lg md:hidden"
           id="mobile-nav"
         >
           <div className="flex flex-col gap-1">

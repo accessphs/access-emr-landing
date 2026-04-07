@@ -40,6 +40,33 @@ const testimonials = [
     logoTitle: "Boston Children’s Hospital",
     logoSubtitle: "Where the world comes for answers",
   },
+  {
+    quote:
+      "Access EMR has streamlined clinical operations and improved patient care. My workflow is faster and more organized.",
+    name: "Dr. Jonathan Peters",
+    role: "Pediatric Consultant",
+    logoSrc: "/boston-logo.png",
+    logoTitle: "Boston Children’s Hospital",
+    logoSubtitle: "Where the world comes for answers",
+  },
+  {
+    quote:
+      "Access EMR has streamlined clinical operations and improved patient care. My workflow is faster and more organized.",
+    name: "Dr. Jonathan Peters",
+    role: "Pediatric Consultant",
+    logoSrc: "/boston-logo.png",
+    logoTitle: "Boston Children’s Hospital",
+    logoSubtitle: "Where the world comes for answers",
+  },
+  {
+    quote:
+      "Access EMR has streamlined clinical operations and improved patient care. My workflow is faster and more organized.",
+    name: "Dr. Jonathan Peters",
+    role: "Pediatric Consultant",
+    logoSrc: "/boston-logo.png",
+    logoTitle: "Boston Children’s Hospital",
+    logoSubtitle: "Where the world comes for answers",
+  },
 ];
 
 type TestimonialCardProps = {
@@ -162,7 +189,7 @@ export const Testimonial = () => {
           </div>
         </div>
 
-        <div className="">
+        <div className="flex">
           <Slider {...sliderSettings} ref={sliderRef}>
             {testimonials.map((t, i) => (
               <div

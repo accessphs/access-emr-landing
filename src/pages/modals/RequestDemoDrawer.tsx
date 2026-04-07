@@ -51,7 +51,7 @@ export function RequestDemoDrawer({ isOpen, onClose }: Props) {
   return (
     <FormProvider {...methods}>
       <SideDrawer isOpen={isOpen} onClose={onClose}>
-        <div className="flex h-full min-h-screen w-full min-w-lg flex-col">
+        <div className="flex h-full min-h-screen w-full min-w-lg flex-col overflow-auto">
           <div className="px-6 pb-4 pt-6 sm:px-8">
             <div className="flex items-start justify-between gap-4">
               <div>
@@ -83,7 +83,7 @@ export function RequestDemoDrawer({ isOpen, onClose }: Props) {
           </div>
 
           <form
-            className="flex flex-1 flex-col gap-5 overflow-y-auto px-6 py-6 sm:px-8"
+            className="flex flex-1 flex-col gap-5 overflow-y-auto px-6 py-6 sm:px-8 overflow-auto"
             onSubmit={handleSubmit(onSubmit)}
           >
             <FormInput
