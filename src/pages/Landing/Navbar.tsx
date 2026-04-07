@@ -1,5 +1,6 @@
+import { Transition, TransitionChild } from "@headlessui/react";
 import classNames from "classnames";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const SECTIONS = [
@@ -154,21 +155,31 @@ const Navbar = () => {
         </button>
       </div>
 
-      {menuOpen ? (
-        <div
-          className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-gray-100 bg-[#003D32] px-4 py-4 shadow-lg md:hidden"
-          id="mobile-nav"
+      <Transition as={Fragment} show={menuOpen}>
+        <TransitionChild
+          as={Fragment}
+          enter="ease-out duration-200 motion-reduce:transition-none"
+          enterFrom="-translate-y-2 opacity-0"
+          enterTo="translate-y-0 opacity-100"
+          leave="ease-in duration-150 motion-reduce:transition-none"
+          leaveFrom="translate-y-0 opacity-100"
+          leaveTo="-translate-y-2 opacity-0"
         >
-          <div className="flex flex-col gap-1">
-            <NavLinks
-              onLanding={onLanding}
-              pathname={pathname}
-              section={section}
-              onNavigate={() => setMenuOpen(false)}
-            />
+          <div
+            className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-gray-100 bg-[#003D32] px-4 py-4 shadow-lg md:hidden"
+            id="mobile-nav"
+          >
+            <div className="flex flex-col gap-1">
+              <NavLinks
+                onLanding={onLanding}
+                pathname={pathname}
+                section={section}
+                onNavigate={() => setMenuOpen(false)}
+              />
+            </div>
           </div>
-        </div>
-      ) : null}
+        </TransitionChild>
+      </Transition>
     </nav>
   );
 };
