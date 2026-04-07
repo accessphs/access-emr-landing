@@ -57,7 +57,7 @@ export const SideDrawer = ({
               "translate-x-full": position === "right",
             })}
           >
-            <DialogPanel className="flex h-full flex-col overflow-hidden bg-white shadow-2xl outline-none">
+            <DialogPanel className="flex h-full max-h-[100dvh] w-full max-w-md flex-col overflow-hidden bg-white shadow-2xl outline-none sm:max-w-lg">
               {children}
             </DialogPanel>
           </TransitionChild>

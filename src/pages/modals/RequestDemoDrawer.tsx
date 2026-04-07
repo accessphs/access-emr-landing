@@ -51,8 +51,8 @@ export function RequestDemoDrawer({ isOpen, onClose }: Props) {
   return (
     <FormProvider {...methods}>
       <SideDrawer isOpen={isOpen} onClose={onClose}>
-        <div className="flex h-full min-h-screen w-full min-w-lg flex-col overflow-auto">
-          <div className="px-6 pb-4 pt-6 sm:px-8">
+        <div className="flex h-full min-h-0 w-full min-w-0 flex-col overflow-hidden">
+          <div className="shrink-0 border-b border-gray-100 px-6 pb-4 pt-6 sm:px-8">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h2 className="text-xl font-bold text-gray-900">
@@ -83,42 +83,44 @@ export function RequestDemoDrawer({ isOpen, onClose }: Props) {
           </div>
 
           <form
-            className="flex flex-1 flex-col gap-5 overflow-y-auto px-6 py-6 sm:px-8 overflow-auto"
+            className="flex min-h-0 flex-1 flex-col"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <FormInput
-              name="full_name"
-              intent="fill"
-              label="Full name"
-              placeholder="Enter your full name"
-            />
-            <FormInput
-              name="email"
-              intent="fill"
-              label="Email address"
-              placeholder="Enter your work email address"
-              type="email"
-            />
-            <FormInput
-              name="organization"
-              intent="fill"
-              label="Hospital/Clinic name"
-              placeholder="What is your organization name"
-            />
-            <FormInput
-              name="location"
-              intent="fill"
-              label="Country/State"
-              placeholder="E.g Nigeria/ Lagos"
-            />
-            <FormInput
-              name="preferred_date"
-              intent="fill"
-              label="Preferred date"
-              type="date"
-            />
+            <div className="min-h-0 flex-1 space-y-5 overflow-y-auto overscroll-contain px-6 py-6 sm:px-8">
+              <FormInput
+                name="full_name"
+                intent="fill"
+                label="Full name"
+                placeholder="Enter your full name"
+              />
+              <FormInput
+                name="email"
+                intent="fill"
+                label="Email address"
+                placeholder="Enter your work email address"
+                type="email"
+              />
+              <FormInput
+                name="organization"
+                intent="fill"
+                label="Hospital/Clinic name"
+                placeholder="What is your organization name"
+              />
+              <FormInput
+                name="location"
+                intent="fill"
+                label="Country/State"
+                placeholder="E.g Nigeria/ Lagos"
+              />
+              <FormInput
+                name="preferred_date"
+                intent="fill"
+                label="Preferred date"
+                type="date"
+              />
+            </div>
 
-            <div className="mt-auto border-t border-gray-100 pt-6">
+            <div className="shrink-0 border-t border-gray-100 bg-white px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-4 sm:px-8">
               <Button
                 block
                 kinds="primary"
