@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { StyleText } from "./Hero";
+import { Logo } from "./Icons";
 
 const Footer = () => {
   return (
@@ -7,21 +8,22 @@ const Footer = () => {
       <div className="mx-auto flex max-w-screen-2xl flex-col gap-12 px-4 sm:gap-16 sm:px-6 md:mx-[100px] md:gap-[72px] md:px-0 relative">
         <div className="flex flex-col justify-between gap-10 md:flex-row md:gap-32">
           <div className="flex flex-col gap-6 items-start">
-            <img
-              src="/logo.png"
-              alt="Logo"
-              className="w-auto object-contain items-start justify-start h-24 -ml-7"
-            />
-            <div className="flex-col gap-4 items-start hidden md:flex -mt-12">
+            <div className="space-y-2">
+              <Logo />
+              <p className="text-sm font-light">
+                Smarter healthcare, seamless workflow
+              </p>
+            </div>
+            <div className="flex-col gap-4 items-start hidden md:flex">
               {/* <Button className="bg-[#F2F2F2]" kinds={"normal"}>
                 Sign in
               </Button> */}
-              <p className="text-sm text-[#1A1A1A]">
+              <p className="text-sm font-light text-[#1A1A1A]">
                 © accessemr Ltd {new Date().getFullYear()}
               </p>
             </div>
-            <div className="absolute bottom-0 left-4 flex-col gap-4 items-start md:hidden -mt-12">
-              <p className="text-sm text-[#1A1A1A]">
+            <div className="absolute bottom-0 left-4 flex-col gap-4 items-start md:hidden">
+              <p className="text-sm font-light text-[#1A1A1A]">
                 © accessemr Ltd {new Date().getFullYear()}
               </p>
             </div>
@@ -35,7 +37,7 @@ const Footer = () => {
                   <li>
                     <Link
                       className="hover:text-gray-900 transition"
-                      to="/about"
+                      to="#"
                     >
                       About us
                     </Link>
@@ -43,7 +45,7 @@ const Footer = () => {
                   <li>
                     <Link
                       className="hover:text-gray-900 transition"
-                      to="/terms"
+                      to="#"
                     >
                       Terms of service
                     </Link>
@@ -51,7 +53,7 @@ const Footer = () => {
                   <li>
                     <Link
                       className="hover:text-gray-900 transition"
-                      to="/privacy"
+                      to="#"
                     >
                       Privacy policy
                     </Link>

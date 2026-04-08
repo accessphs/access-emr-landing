@@ -148,7 +148,7 @@ const ModuleCard = ({
 
 const Modules = () => {
   return (
-    <div className="flex min-h-[420px] w-full flex-col bg-[#0A100A] py-12 sm:min-h-[500px] sm:py-16 md:min-h-[580px]">
+    <div className="flex min-h-[420px] w-full flex-col bg-gradient-to-b from-[#003D32] to-[#00705C] py-12 sm:min-h-[500px] sm:py-16 md:min-h-[580px]">
       <div className="mx-auto my-auto flex w-full max-w-screen-2xl flex-col gap-10 px-2 sm:gap-12 md:gap-16">
         <div className="mx-auto flex max-w-3xl flex-col gap-4 px-4 text-center sm:gap-7">
           <StyleText className="text-2xl text-white sm:text-3xl md:text-[40px]">
