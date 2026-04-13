@@ -35,26 +35,17 @@ const Footer = () => {
                 <h3 className="font-medium text-base text-gray-900">Company</h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>
-                    <Link
-                      className="hover:text-gray-900 transition"
-                      to="#"
-                    >
+                    <Link className="hover:text-gray-900 transition" to="#">
                       About us
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      className="hover:text-gray-900 transition"
-                      to="#"
-                    >
+                    <Link className="hover:text-gray-900 transition" to="#">
                       Terms of service
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      className="hover:text-gray-900 transition"
-                      to="#"
-                    >
+                    <Link className="hover:text-gray-900 transition" to="#">
                       Privacy policy
                     </Link>
                   </li>
@@ -72,17 +63,19 @@ const Footer = () => {
                       className="hover:text-gray-900 transition"
                       to="mailto:accessemr@gmail.com"
                     >
-                      accessemr@gmail.com
+                      itsupport@accessemr.app Info@accessphs.com
                     </Link>
                   </li>
 
                   <li>
-                    <Link
+                    <a
                       className="hover:text-gray-900 transition"
-                      to="tel:+2348169784022"
+                      href="https://wa.me/2348073302878"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      +2348169784022
-                    </Link>
+                      +2348073302878 (Whatsapp only)
+                    </a>
                   </li>
                 </ul>
               </div>
