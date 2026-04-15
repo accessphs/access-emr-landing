@@ -10,7 +10,7 @@ const testimonials = [
     name: "Dr. Ayooluwa Gbadamosi",
     role: "General Practitioner",
     logoSrc: "/boston-logo.png",
-    logoTitle: "Boston Children’s Hospital",
+    logoTitle: "Strategic Insight Hospital",
     logoSubtitle: "Where the world comes for answers",
   },
   {
@@ -19,7 +19,7 @@ const testimonials = [
     name: "Dr. Jonathan Peters",
     role: "Pediatric Consultant",
     logoSrc: "/boston-logo.png",
-    logoTitle: "Boston Children’s Hospital",
+    logoTitle: "Strategic Insight Hospital",
     logoSubtitle: "Where the world comes for answers",
   },
   {
@@ -28,7 +28,7 @@ const testimonials = [
     name: "Dr. Jonathan Peters",
     role: "Pediatric Consultant",
     logoSrc: "/boston-logo.png",
-    logoTitle: "Boston Children’s Hospital",
+    logoTitle: "Strategic Insight Hospital",
     logoSubtitle: "Where the world comes for answers",
   },
   {
@@ -37,7 +37,7 @@ const testimonials = [
     name: "Dr. Jonathan Peters",
     role: "Pediatric Consultant",
     logoSrc: "/boston-logo.png",
-    logoTitle: "Boston Children’s Hospital",
+    logoTitle: "Strategic Insight Hospital",
     logoSubtitle: "Where the world comes for answers",
   },
   {
@@ -46,7 +46,7 @@ const testimonials = [
     name: "Dr. Jonathan Peters",
     role: "Pediatric Consultant",
     logoSrc: "/boston-logo.png",
-    logoTitle: "Boston Children’s Hospital",
+    logoTitle: "Strategic Insight Hospital",
     logoSubtitle: "Where the world comes for answers",
   },
   {
@@ -55,7 +55,7 @@ const testimonials = [
     name: "Dr. Jonathan Peters",
     role: "Pediatric Consultant",
     logoSrc: "/boston-logo.png",
-    logoTitle: "Boston Children’s Hospital",
+    logoTitle: "Strategic Insight Hospital",
     logoSubtitle: "Where the world comes for answers",
   },
   {
@@ -64,7 +64,7 @@ const testimonials = [
     name: "Dr. Jonathan Peters",
     role: "Pediatric Consultant",
     logoSrc: "/boston-logo.png",
-    logoTitle: "Boston Children’s Hospital",
+    logoTitle: "Strategic Insight Hospital",
     logoSubtitle: "Where the world comes for answers",
   },
 ];

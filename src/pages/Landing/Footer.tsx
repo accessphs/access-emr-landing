@@ -61,10 +61,37 @@ const Footer = () => {
                   <li>
                     <Link
                       className="hover:text-gray-900 transition"
-                      to="mailto:accessemr@gmail.com"
+                      to="mailto:sales@accessphs.com"
                     >
-                      itsupport@accessemr.app Info@accessphs.com
+                      sales@accessphs.com
                     </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="hover:text-gray-900 transition"
+                      to="mailto:itsupport@accessemr.app"
+                    >
+                      itsupport@accessemr.app
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      className="hover:text-gray-900 transition"
+                      to="mailto:Info@accessphs.com"
+                    >
+                      Info@accessphs.com
+                    </Link>
+                  </li>
+                  <li>
+                    <a
+                      className="hover:text-gray-900 transition"
+                      href="https://wa.me/2347068468368"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      +2347068468368 (Whatsapp only)
+                    </a>
                   </li>
 
                   <li>
